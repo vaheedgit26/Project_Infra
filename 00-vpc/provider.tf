@@ -6,6 +6,7 @@ terraform {
       version = ">= 6.0"
     }
   }
+
 # Remote Backend
   backend "s3" {
     bucket         = "tfstate-dev-us-east-1-jpjtof"
