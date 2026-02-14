@@ -15,5 +15,5 @@ module "vpc" {
 
   project_name = var.project_name
   env          = var.env
-  common_tags  = var.common_tags
+  common_tags  = local.common_tags
 }
