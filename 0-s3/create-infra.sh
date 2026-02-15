@@ -24,7 +24,7 @@ terraform plan
 terraform apply # -auto-approve
 
 # Export S3 bucket name and AWS region as environment variables
-export TF_STATE_BUCKET=$(terraform output -raw tf_state_bucket)
+export TF_STATE_BUCKET=$(terraform output -raw tfstate_bucket_id)
 export AWS_REGION=$(terraform output -raw aws_region)
 
 echo "TF_STATE_BUCKET=$TF_STATE_BUCKET"
