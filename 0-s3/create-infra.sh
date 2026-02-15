@@ -4,16 +4,16 @@ set -e
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
 
-echo "============================================"
-echo "Step 1: Create S3 bucket for Terraform state"
-echo "============================================"
+echo "============================================="
+echo "Step 1: Create S3 bucket for Terraform state "
+echo "============================================="
 # cd 0-s3
 
 terraform init
 
-echo "================================================"
-echo "Step 1: Checking S3 bucket Configuration Valid ?"
-echo "================================================"
+echo "================================================="
+echo "Step 1: Checking S3 bucket Configuration Valid ? "
+echo "================================================="
 terraform validate
 
 echo "================================================"
