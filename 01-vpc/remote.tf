@@ -1,12 +1,17 @@
-# --------------------------------------------------------------------
-# Reference the Remote State from S3 Project
-# --------------------------------------------------------------------
-data "terraform_remote_state" "s3" {
+variable "tf_state_bucket" {
+  default = ""  # empty default
+}
+
+variable "aws_region" {
+  default = ""  # empty default
+}
+
+data "terraform_remote_state" "vpc" {
   backend = "s3"
 
   config = {
-    bucket = "tfstate-dev-us-east-1-jpjtof"     # Name of the remote S3 bucket where the VPC state is stored
-    key    = "dev/vpc/terraform.tfstate"        # Path to the VPC tfstate file within the bucket
-    region = "ap-south-1"     # var.aws_region                    # Region where the S3 bucket and DynamoDB table exist
+    bucket = var.tf_state_bucket != "" ? var.tf_state_bucket : env.TF_STATE_BUCKET
+    key    = "vpc/terraform.tfstate"
+    region = var.aws_region != "" ? var.aws_region : env.AWS_REGION
   }
 }
