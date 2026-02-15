@@ -15,3 +15,7 @@ data "terraform_remote_state" "vpc" {
     region = var.aws_region != "" ? var.aws_region : env.AWS_REGION
   }
 }
+
+# export TF_STATE_BUCKET=my-terraform-state-prod
+# export AWS_REGION=us-east-1
+
