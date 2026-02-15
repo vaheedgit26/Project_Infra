@@ -1,5 +1,5 @@
 variable "project_name" {
-  description = "Project Name)"
+  description = "Project Name"
   type        = string
   default     = "expense"
 }
