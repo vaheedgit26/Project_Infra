@@ -7,5 +7,5 @@ use_lockfile   = true
 
 # terraform init \
 #   -backend-config=../backend-configs/dev.hcl \
-#   -backend-config="key=vpc/terraform.tfstate"   (This should be passed according to your module like vpc, alb, sg ...etc
+#   -backend-config="key=dev/vpc/terraform.tfstate"   (This should be passed according to your module like vpc, alb, sg ...etc
 
