@@ -1,7 +1,7 @@
-variable "region" {
-  type    = string
-  default = "ap-south-1"
-}
+#variable "region" {
+#  type    = string
+#  default = "ap-south-1"
+#}
 
 variable "project_name" {
   type    = string
