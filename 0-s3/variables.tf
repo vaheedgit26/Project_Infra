@@ -1,3 +1,9 @@
+variable "project_name" {
+  description = "Project Name)"
+  type        = string
+  default     = "expense"
+}
+
 variable "env" {
   description = "Deployment environment (e.g., dev, staging, prod)"
   type        = string
