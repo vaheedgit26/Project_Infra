@@ -1,5 +1,13 @@
+####################################################
+# Usage: sh create-infra.sh expense dev ap-south-1 #
+####################################################
+
 #!/bin/bash
 set -e
+
+PROJECT_NAME = $1
+ENV = $2
+REGION = $3
 
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
@@ -19,12 +27,12 @@ terraform validate
 echo "================================================"
 echo "Step 3: Generating plan for creating S3 bucket  "
 echo "================================================"
-terraform plan
+terraform plan -var="project_name=$PROJECT_NAME" -var="env=$ENV" -var="region=$REGION"
 
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket  "
 echo "================================================"
-terraform apply # -auto-approve
+terraform apply -var="project_name=$PROJECT_NAME" -var="env=$ENV" -var="region=$REGION" # -auto-approve
 
 # Export S3 bucket name and AWS region as environment variables
 export TF_VAR_tf_state_bucket=$(terraform output -raw tfstate_bucket_id)
