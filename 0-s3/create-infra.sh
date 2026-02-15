@@ -10,7 +10,17 @@ echo "============================================"
 # cd 0-s3
 
 terraform init
+
+echo "================================================"
+echo "Step 1: Checking S3 bucket Configuration Valid ?"
+echo "================================================"
+terraform validate
+
+echo "================================================"
+echo "Step 1: Generating plan for creating S3 bucket  "
+echo "================================================"
 terraform plan
+
 terraform apply # -auto-approve
 
 # Export S3 bucket name and AWS region as environment variables
