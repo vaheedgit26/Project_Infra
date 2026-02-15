@@ -30,7 +30,7 @@ echo "================================================"
 terraform plan \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV" \
-  -var="region=$REGION" \
+  -var="region=$REGION" 
 
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket  "
