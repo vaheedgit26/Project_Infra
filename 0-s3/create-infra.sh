@@ -12,12 +12,12 @@ echo "============================================="
 terraform init
 
 echo "================================================="
-echo "Step 1: Checking S3 bucket Configuration Valid ? "
+echo "Step 2: Checking S3 bucket Configuration Valid ? "
 echo "================================================="
 terraform validate
 
 echo "================================================"
-echo "Step 1: Generating plan for creating S3 bucket  "
+echo "Step 3: Generating plan for creating S3 bucket  "
 echo "================================================"
 terraform plan
 
