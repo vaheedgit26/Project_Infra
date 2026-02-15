@@ -3,12 +3,6 @@
 #  default = "ap-south-1"
 #}
 
-variable "project_name" {
-  type    = string
-  default = "expense"
-}
+variable "project_name" {}
 
-variable "env" {
-  type    = string
-  default = "dev"
-}
+variable "env" {}
