@@ -5,9 +5,9 @@
 #!/bin/bash
 set -e
 
-PROJECT_NAME = $1
-ENV = $2
-REGION = $3
+PROJECT_NAME=$1
+ENV=$2
+REGION=$3
 
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
