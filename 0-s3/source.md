@@ -1,4 +1,5 @@
-```sql
+## 🔹 Diagram: Sourced vs Executed Script   
+```text
 Scenario A: Script executed directly   
 ------------------------------------
 Command: ./create-s3-bucket.sh   
@@ -22,4 +23,4 @@ Current Shell ───────────────▶ script runs IN th
                                │  $0               = bash   
                                │      
 Result: Not equal → script is sourced
-```sql    
+```text   
