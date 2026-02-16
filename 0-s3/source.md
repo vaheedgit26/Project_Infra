@@ -1,3 +1,4 @@
+```sql
 Scenario A: Script executed directly   
 ------------------------------------
 Command: ./create-s3-bucket.sh   
@@ -20,4 +21,5 @@ Current Shell ───────────────▶ script runs IN th
                                │  BASH_SOURCE[0] = ./create-s3-bucket.sh   
                                │  $0               = bash   
                                │      
-Result: Not equal → script is sourced    
+Result: Not equal → script is sourced
+```sql    
