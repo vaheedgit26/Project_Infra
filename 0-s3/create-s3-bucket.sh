@@ -1,17 +1,29 @@
 #!/bin/bash
-###########################################################
-# Usage: source create-s3-bucket.sh expense dev ap-south-1
-# NOTE: Use 'source' to keep TF_VARs in current shell
-###########################################################
+########################################################
+# Usage: source create-s3-bucket.sh <project> <env> <region>
+# Detects whether script is sourced or executed
+########################################################
 set -e
 
 PROJECT_NAME=$1
 ENV=$2
 REGION=$3
 
+# Function to handle errors safely depending on context
+abort() {
+    local msg="$1"
+    echo "$msg" >&2
+    # Check if script is sourced
+    if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
+        return 1  # Script is sourced, don't exit the shell
+    else
+        exit 1    # Script is run directly, safe to exit
+    fi
+}
+
+# Check required arguments
 if [[ -z "$PROJECT_NAME" || -z "$ENV" || -z "$REGION" ]]; then
-    echo "Usage: source create-s3-bucket.sh <project_name> <env> <region>"
-    return 1
+    abort "Usage: source create-s3-bucket.sh <project_name> <env> <region>"
 fi
 
 echo "============================================="
@@ -37,7 +49,7 @@ terraform plan \
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket"
 echo "================================================"
-terraform apply s3.tfplan    # Add -auto-approve if you want no prompt
+terraform apply s3.tfplan    # Add -auto-approve if desired
 
 echo "================================================"
 echo "Step 5: Exporting TF_VARs for current shell"
@@ -53,7 +65,6 @@ export TF_VAR_env
 export TF_VAR_region
 export TF_VAR_tf_state_bucket
 
-# Print instructions for user confirmation
 echo "================================================"
 echo "✅ TF_VARs exported for current shell:"
 echo "TF_VAR_env=$TF_VAR_env"
