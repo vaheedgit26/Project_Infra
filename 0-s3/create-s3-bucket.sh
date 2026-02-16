@@ -28,18 +28,16 @@ echo "================================================"
 echo "Step 3: Generating plan for creating S3 bucket  "
 echo "================================================"
 terraform plan \
+  -out=s3.tfplan \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV" \
-  -var="region=$REGION" 
+  -var="region=$REGION"
 
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket  "
 echo "================================================"
-terraform apply \
-  -var="project_name=$PROJECT_NAME" \
-  -var="env=$ENV" \ 
-  -var="region=$REGION"  # -auto-approve
-
+terraform apply s3.tfplan    # -auto-approve
+    
 # Export env, AWS region and S3 bucket name as environment variables
 export TF_VAR_env=$(terraform output -raw env)
 export TF_VAR_region=$(terraform output -raw region)
