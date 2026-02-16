@@ -23,4 +23,6 @@ Current Shell ───────────────▶ script runs IN th
                                │  $0               = bash   
                                │      
 Result: Not equal → script is sourced
-```  
+```
+
+
