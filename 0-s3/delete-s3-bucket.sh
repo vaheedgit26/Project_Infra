@@ -16,3 +16,13 @@ terraform destroy \
   -var="env=$ENV" \
   -var="region=$REGION"
   # -auto-approve
+
+
+# terraform plan -destroy \
+#  -var="project_name=expense" \
+#  -var="env=dev" \
+#  -var="region=ap-south-1" \
+#  -out=destroy.tfplan
+
+# terraform apply destroy.tfplan
+
