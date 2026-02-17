@@ -10,6 +10,14 @@ ENV=$(terraform -chdir=../0-s3 output -raw env)                       #${TF_VAR_
 REGION=$(terraform -chdir=../0-s3 output -raw region)                 #${TF_VAR_region}
 PROJECT_NAME=$(terraform -chdir=../0-s3 output -raw project_name)
 
+echo """
+📄 Details:
+     PROJECT_NAME : ${PROJECT_NAME}
+     ENV          : ${ENV}
+     REGION       : ${REGION}
+     BUCKET       : ${BUCKET}
+"""
+
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
 
