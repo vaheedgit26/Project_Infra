@@ -8,7 +8,7 @@ set -e
 BUCKET=$(terraform -chdir=../0-s3 output -raw bucket_id)              #${TF_VAR_tf_state_bucket}
 ENV=$(terraform -chdir=../0-s3 output -raw env)                       #${TF_VAR_env}
 REGION=$(terraform -chdir=../0-s3 output -raw region)                 #${TF_VAR_region}
-PROJECT_NAME=$(terraform -chdir=../0-s3 output -raw Project_name)
+PROJECT_NAME=$(terraform -chdir=../0-s3 output -raw project_name)
 
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
