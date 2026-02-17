@@ -4,6 +4,6 @@ module "s3" {
 
   s3_bucket_name = "tfstate-${var.project_name}-${var.region}"
   project_name   = var.project_name
-  env            = var.env
+  #env            = var.env
   region         = var.region
 }
