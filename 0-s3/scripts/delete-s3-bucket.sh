@@ -11,6 +11,8 @@ REGION=$3
 
 # terraform init
 
+cd ..
+
 terraform destroy \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV" \
