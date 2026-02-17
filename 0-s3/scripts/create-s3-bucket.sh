@@ -1,8 +1,8 @@
 #!/bin/bash
-########################################################
-# Usage: source create-s3-bucket.sh <project> <env> <region>
+#################################################################
+# Usage: source create-s3-bucket.sh <project_name> <env> <region>
 # Detects whether script is sourced or executed
-########################################################
+#################################################################
 set -e
 
 # Step 0: Go to repo root
@@ -28,6 +28,9 @@ abort() {
 if [[ -z "$PROJECT_NAME" || -z "$ENV" || -z "$REGION" ]]; then
     abort "Usage: source create-s3-bucket.sh <project_name> <env> <region>"
 fi
+
+# Change to terraform manifests directtory
+cd ..
 
 echo "============================================="
 echo "Step 1: Create S3 bucket for Terraform state "
