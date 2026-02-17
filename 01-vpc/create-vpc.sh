@@ -53,4 +53,4 @@ terraform plan \
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket  "
 echo "================================================"
-#terraform apply # -auto-approve
+terraform apply # -auto-approve
