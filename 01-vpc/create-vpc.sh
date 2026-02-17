@@ -5,9 +5,9 @@
 #!/bin/bash
 set -e
 
-BUCKET=${TF_VAR_tf_state_bucket}
-ENV=${TF_VAR_env}
-REGION=${TF_VAR_region}
+BUCKET=$(terraform -chdir=../s3 output -raw bucket)                 #${TF_VAR_tf_state_bucket}
+ENV=$(terraform -chdir=../s3 output -raw env)                       #${TF_VAR_env}
+REGION=$(terraform -chdir=../s3 output -raw region)                 #${TF_VAR_region}
 
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
