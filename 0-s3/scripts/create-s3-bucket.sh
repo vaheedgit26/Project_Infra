@@ -62,19 +62,20 @@ echo "Step 5: Exporting TF_VARs for current shell"
 echo "================================================"
 
 # Capture Terraform outputs
-TF_VAR_env=$(terraform output -raw env)
-TF_VAR_region=$(terraform output -raw region)
-TF_VAR_tf_state_bucket=$(terraform output -raw tfstate_bucket_id)
+export TF_VAR_env=$(terraform output -raw env)
+export TF_VAR_region=$(terraform output -raw region)
+export TF_VAR_tf_state_bucket=$(terraform output -raw tfstate_bucket_id)
 
-# Export variables to current shell
-export TF_VAR_env
-export TF_VAR_region
-export TF_VAR_tf_state_bucket
-
-echo "================================================"
 echo "✅ TF_VARs exported for current shell:"
+echo "========================================================"
 echo "TF_VAR_env=$TF_VAR_env"
 echo "TF_VAR_region=$TF_VAR_region"
 echo "TF_VAR_tf_state_bucket=$TF_VAR_tf_state_bucket"
 echo "You can now run Terraform commands with these variables."
-echo "================================================"
+echo "========================================================"
+
+cat > bucket_details.txt <<EOF
+env=$TF_VAR_env
+region=$TF_VAR_region
+bucket=$TF_VAR_tf_state_bucket
+EOF
