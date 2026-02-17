@@ -1,13 +1,14 @@
 ################################################
-# Usage: sh create-vpc.sh <project_name> <env> #
+# Usage: sh create-vpc.sh    #
 ################################################
 
 #!/bin/bash
 set -e
 
-BUCKET=$(terraform -chdir=../s3 output -raw bucket)                 #${TF_VAR_tf_state_bucket}
-ENV=$(terraform -chdir=../s3 output -raw env)                       #${TF_VAR_env}
-REGION=$(terraform -chdir=../s3 output -raw region)                 #${TF_VAR_region}
+BUCKET=$(terraform -chdir=../0-s3 output -raw bucket_id)              #${TF_VAR_tf_state_bucket}
+ENV=$(terraform -chdir=../0-s3 output -raw env)                       #${TF_VAR_env}
+REGION=$(terraform -chdir=../0-s3 output -raw region)                 #${TF_VAR_region}
+PROJECT_NAME=$(terraform -chdir=../0-s3 output -raw Project_name)
 
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
@@ -33,9 +34,15 @@ terraform validate
 echo "================================================"
 echo "Step 3: Generating plan for creating VPC  "
 echo "================================================"
-terraform plan
+# terraform plan
+terraform plan \
+  -out=vpc.tfplan \
+  -var="project_name=$PROJECT_NAME" \
+  -var="env=$ENV" \
+  -var="region=$REGION"
+  
 
 echo "================================================"
 echo "Step 4: Applying plan for creating S3 bucket  "
 echo "================================================"
-terraform apply # -auto-approve
+#terraform apply # -auto-approve
