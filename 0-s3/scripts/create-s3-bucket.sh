@@ -36,7 +36,7 @@ echo "============================================="
 echo "Step 1: Create S3 bucket for Terraform state "
 echo "============================================="
 
-terraform init
+terraform init -upgrade
 
 echo "===================================================="
 echo "Step 2: Checking S3 bucket Configuration Validity"
