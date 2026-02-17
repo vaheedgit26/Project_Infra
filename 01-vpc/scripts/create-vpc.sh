@@ -1,8 +1,9 @@
 ################################################
-# Usage: sh create-vpc.sh    #
+# Usage: bash create-vpc.sh    #
 ################################################
+# This script takes 'bucket', 'env', region' and 'project_name' from previous '0-s3' calling module 
 
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 BUCKET=$(terraform -chdir=../0-s3 output -raw bucket_id)              #${TF_VAR_tf_state_bucket}
