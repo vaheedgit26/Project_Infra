@@ -1,3 +1,8 @@
+output "project_name" {
+  description = "Project Name"
+  value       = var.project_name
+}
+
 output "env" {
   description = "Environment"
   value       = var.env
