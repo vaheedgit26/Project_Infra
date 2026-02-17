@@ -17,7 +17,7 @@ echo "Step 1: Initialiaze VPC Module "
 echo "============================================="
 # cd 0-s3
 
-terraform init \
+terraform init -upgrade \
   -backend-config="bucket=${BUCKET}" \
   -backend-config="key=${ENV}/vpc/terraform.tfstate" \
   -backend-config="region=${REGION}" \
