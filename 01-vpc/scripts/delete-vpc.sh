@@ -1,5 +1,5 @@
 ########################################################
-# Usage: bash delete-vpc.sh expense dev ap-south-1     #
+# Usage: bash delete-vpc.sh      #
 ########################################################
 
 #!/bin/bash
