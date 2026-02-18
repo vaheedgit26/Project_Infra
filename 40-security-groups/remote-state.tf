@@ -14,7 +14,7 @@ data "terraform_remote_state" "vpc" {
 # --------------------------------------------------------------------
 # Output the VPC ID from the remote VPC state
 # --------------------------------------------------------------------
-output "vpc_id_from_sg_nodule" {
+output "vpc_id_from_sg_module" {
   value = data.terraform_remote_state.vpc.outputs.vpc_id
 }
 
