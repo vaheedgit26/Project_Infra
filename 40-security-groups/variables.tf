@@ -1,6 +1,6 @@
 #############################   Common Variables   #########################################
-variable "project_name" { default = "expense" }
-variable "env" { default = "dev" }
+variable "project_name" {}
+variable "env" {}
 variable "remote_bucket" {}
 
 variable "common_tags" {
