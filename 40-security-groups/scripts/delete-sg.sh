@@ -16,7 +16,7 @@ cd ..
 terraform destroy \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV"
-  #-var="region=$REGION"
+  -var="region=$REGION"
   # -auto-approve
 
 
