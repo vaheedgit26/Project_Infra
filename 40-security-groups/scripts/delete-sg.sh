@@ -15,7 +15,7 @@ PROJECT_NAME=$(terraform -chdir=../../0-s3 output -raw project_name)
 cd ..
 
 terraform destroy \
-  -var="bucket=${BUCKET}" \
+  -var="remote_bucket=${BUCKET}" \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV" \
   -var="region=$REGION"
