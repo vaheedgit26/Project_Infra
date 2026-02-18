@@ -47,8 +47,8 @@ terraform plan \
   -out=sg.tfplan \
   -var="remote_bucket=${BUCKET}" \
   -var="project_name=$PROJECT_NAME" \
-  -var="env=$ENV" 
-  #-var="region=$REGION"
+  -var="env=$ENV" \
+  -var="region=${REGION}"
   
 echo "================================================"
 echo "Step 4: Applying plan for creating vpc bucket  "
