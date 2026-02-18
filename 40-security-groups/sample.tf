@@ -1,6 +1,6 @@
 module "sample_sg" {
   source         = "git::https://github.com/vaheedgit26/Infra.git//modules/sg"
-  vpc_id         = local.vpc_id
+  vpc_id         = data.terraform_remote_state.vpc.outputs.vpc_id    # from 'remote.tf' file
   sg_name        = "web_alb_sg"
   sg_description = "Web ALB Security Group"
 
