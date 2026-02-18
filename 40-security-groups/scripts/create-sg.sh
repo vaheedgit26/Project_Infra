@@ -1,5 +1,5 @@
 ################################################
-# Usage: bash create-vpc.sh    #
+# Usage: bash create-sg.sh    #
 ################################################
 # This script takes 'bucket', 'env', region' and 'project_name' as inputs from previous '0-s3' calling module 
 
