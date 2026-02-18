@@ -1,5 +1,5 @@
 ########################################################
-# Usage: bash delete-vpc.sh expense dev      #
+# Usage: bash delete-vpc.sh            #
 ########################################################
 
 #!/bin/bash
@@ -10,7 +10,13 @@ ENV=$(terraform -chdir=../../0-s3 output -raw env)                       #${TF_V
 REGION=$(terraform -chdir=../../0-s3 output -raw region)                 #${TF_VAR_region}
 PROJECT_NAME=$(terraform -chdir=../../0-s3 output -raw project_name)
 
-# terraform init
+echo """
+📄 Details:
+     PROJECT_NAME : ${PROJECT_NAME}
+     ENV          : ${ENV}
+     REGION       : ${REGION}
+     BUCKET       : ${BUCKET}
+"""
 
 cd ..
 
