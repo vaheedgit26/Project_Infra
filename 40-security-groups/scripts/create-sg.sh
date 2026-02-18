@@ -6,10 +6,10 @@
 #!/usr/bin/env bash
 set -e
 
-BUCKET=$(terraform -chdir=../0-s3 output -raw bucket_id)              #${TF_VAR_tf_state_bucket}
-ENV=$(terraform -chdir=../0-s3 output -raw env)                       #${TF_VAR_env}
-REGION=$(terraform -chdir=../0-s3 output -raw region)                 #${TF_VAR_region}
-PROJECT_NAME=$(terraform -chdir=../0-s3 output -raw project_name)
+BUCKET=$(terraform -chdir=../../0-s3 output -raw bucket_id)              #${TF_VAR_tf_state_bucket}
+ENV=$(terraform -chdir=../../0-s3 output -raw env)                       #${TF_VAR_env}
+REGION=$(terraform -chdir=../../0-s3 output -raw region)                 #${TF_VAR_region}
+PROJECT_NAME=$(terraform -chdir=../../0-s3 output -raw project_name)
 
 echo """
 📄 Details:
