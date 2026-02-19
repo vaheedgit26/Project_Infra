@@ -13,7 +13,7 @@
    private_subnet_cidr  = ["10.200.11.0/24"]
    database_subnet_cidr = ["10.200.31.0/24"]
 
-   project_name =  var.requester_project_name    # "org"
-   env          =  var.requester_project_env     # "dev"
+   project_name =  "org"                 # var.requester_project_name     
+   env          =  "dev"                 # var.requester_project_env     
    common_tags  =  var.common_tags
  }
