@@ -1,6 +1,6 @@
 ############### If you want 1 az, 1 public subnet, 1 private subnet and 1 database subnet ########################
  module "vpc-org" {
-   source = "git::https://github.com/vaheedgithubac/Infra//modules/vpc"          # Give the path to VPC MODULE accordingly
+   source = "git::https://github.com/vaheedgit26/Infra//modules/vpc"          # Give the path to VPC MODULE accordingly
 
    # All the counts should be same 
    azs_count             = 1
