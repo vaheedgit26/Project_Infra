@@ -13,6 +13,7 @@
    private_subnet_cidr  = ["10.200.11.0/24"]
    database_subnet_cidr = ["10.200.31.0/24"]
 
+   region       = "ap-south-1"
    project_name =  "org"                 # var.requester_project_name     
    env          =  "dev"                 # var.requester_project_env     
    common_tags  =  var.common_tags
