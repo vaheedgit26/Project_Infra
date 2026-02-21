@@ -1,9 +1,8 @@
-######################################################################
-# Usage: bash delete-vpc-peering.sh <project_name> <env> <region>    #
-######################################################################
-# This script takes 'bucket', 'env', region' and 'project_name' as inputs from previous '0-s3' calling module 
+########################################################
+# Usage: bash delete-vpc-peering.sh                    #
+########################################################
 
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 
 BUCKET=$(terraform -chdir=../../0-s3 output -raw bucket_id)              
@@ -18,41 +17,19 @@ echo """
      REGION       : ${REGION}
      BUCKET       : ${BUCKET}
 """
-
-# Step 0: Go to repo root
-# cd "$(dirname "$0")"
-
-echo "======================================"
-echo "Step 1: Initialize VPC-PEERING Module "
-echo "======================================"
 cd ..
-
-terraform init -upgrade \
-  -backend-config="bucket=${BUCKET}" \
-  -backend-config="key=${ENV}/vpc-peering/terraform.tfstate" \
-  -backend-config="region=${REGION}" \
-  -backend-config="encrypt=true" \
-  -backend-config="use_lockfile=true"
-
-
-echo "======================================================"
-echo "Step 2: Checking VPC-PEERING Configuration Validity ? "
-echo "======================================================"
-terraform validate
-
-echo "================================================="
-echo "Step 3: Generating plan for creating VPC-PEERING "
-echo "================================================="
-# terraform plan
-terraform plan \
-  -out=vpc-peering.tfplan \
+terraform destroy \
+  -var="remote_bucket=${BUCKET}" \
   -var="project_name=$PROJECT_NAME" \
-  -var="env=$ENV"
-  -var="requester_vpc_region=$REGION" \
-  -var="accepter_vpc_region=$REGION"
+  -var="env=$ENV" \
+  -var="region=$REGION"
+  # -auto-approve
   
+#######################################################
+# terraform plan -destroy \
+#  -var="project_name=expense" \
+#  -var="env=dev" \
+#  -var="region=ap-south-1" \
+#  -out=destroy.tfplan
 
-echo "================================================"
-echo "Step 4: Applying plan for creating vpc bucket  "
-echo "================================================"
-#terraform apply vpc-peering.tfplan    # -auto-approve
+# terraform apply destroy.tfplan
