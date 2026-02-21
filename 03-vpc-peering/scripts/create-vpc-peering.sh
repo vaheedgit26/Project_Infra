@@ -52,6 +52,6 @@ terraform plan \
   -var="region=${REGION}" 
  
 echo "================================================"
-echo "Step 4: Applying plan for creating vpc bucket  "
+echo "Step 4: Applying plan for creating VPC-PEERING  "
 echo "================================================"
 terraform apply vpc-peering.tfplan    # -auto-approve
