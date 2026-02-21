@@ -1,1 +1,4 @@
-variable "region" { default = "ap-south-1"}
+variable "requester_vpc_region" {}
+variable "accepter_vpc_region" {}
+
+
