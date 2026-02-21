@@ -48,7 +48,8 @@ terraform plan \
   -out=vpc-peering.tfplan \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV"
-  -var="region=$REGION"
+  -var="requester_vpc_region=$REGION" \
+  -var="accepter_vpc_region=$REGION"
   
 
 echo "================================================"
