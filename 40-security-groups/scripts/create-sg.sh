@@ -51,6 +51,6 @@ terraform plan \
   -var="region=${REGION}"
   
 echo "================================================"
-echo "Step 4: Applying plan for creating vpc bucket  "
+echo "Step 4: Applying plan for creating S3 Bucket  "
 echo "================================================"
 terraform apply sg.tfplan    # -auto-approve
