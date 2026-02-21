@@ -1,8 +1,8 @@
 ########################################################
-# Usage: sh delete-s3-bucket.sh expense dev ap-south-1 #
+# Usage: sh delete-s3-bucket.sh  #
 ########################################################
 
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 PROJECT_NAME=$1
