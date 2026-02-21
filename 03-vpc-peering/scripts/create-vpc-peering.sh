@@ -22,9 +22,9 @@ echo """
 # Step 0: Go to repo root
 # cd "$(dirname "$0")"
 
-echo "============================================="
+echo "======================================"
 echo "Step 1: Initialize VPC-PEERING Module "
-echo "============================================="
+echo "======================================"
 cd ..
 
 terraform init -upgrade \
@@ -35,14 +35,14 @@ terraform init -upgrade \
   -backend-config="use_lockfile=true"
 
 
-echo "===================================================="
+echo "======================================================"
 echo "Step 2: Checking VPC-PEERING Configuration Validity ? "
-echo "===================================================="
+echo "======================================================"
 terraform validate
 
-echo "================================================"
-echo "Step 3: Generating plan for creating VPC-PEERING  "
-echo "================================================"
+echo "================================================="
+echo "Step 3: Generating plan for creating VPC-PEERING "
+echo "================================================="
 # terraform plan
 terraform plan \
   -out=vpc-peering.tfplan \
