@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #################################################################
 # Usage: source create-s3-bucket.sh <project_name> <env> <region>
 # Detects whether script is sourced or executed
