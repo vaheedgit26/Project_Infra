@@ -23,13 +23,13 @@ echo """
 # cd "$(dirname "$0")"
 
 echo "============================================="
-echo "Step 1: Initialiaze VPC-PEERING Module "
+echo "Step 1: Initialize VPC-PEERING Module "
 echo "============================================="
 cd ..
 
 terraform init -upgrade \
   -backend-config="bucket=${BUCKET}" \
-  -backend-config="key=${ENV}/vpc-2/terraform.tfstate" \
+  -backend-config="key=${ENV}/vpc-peering/terraform.tfstate" \
   -backend-config="region=${REGION}" \
   -backend-config="encrypt=true" \
   -backend-config="use_lockfile=true"
