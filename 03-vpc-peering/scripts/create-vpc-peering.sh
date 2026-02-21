@@ -48,7 +48,7 @@ terraform plan \
   -out=vpc-peering.tfplan \
   -var="remote_bucket=${BUCKET}" \
   -var="project_name=$PROJECT_NAME" \
-  -var="env=$ENV"
+  -var="env=$ENV" \
   -var="requester_vpc_region=$REGION" \
   -var="accepter_vpc_region=$REGION"
   
