@@ -1,6 +1,6 @@
-################################################
-# Usage: bash create-vpc-peering.sh    #
-################################################
+######################################################################
+# Usage: bash delete-vpc-peering.sh <project_name> <env> <region>    #
+######################################################################
 # This script takes 'bucket', 'env', region' and 'project_name' as inputs from previous '0-s3' calling module 
 
 #!/usr/bin/env bash
