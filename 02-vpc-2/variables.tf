@@ -1,4 +1,6 @@
 variable "region" {}
+variable "project_name" {}
+variable "env" {}
 
 variable "common_tags" {
   default = {
