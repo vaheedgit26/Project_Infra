@@ -48,7 +48,7 @@ terraform plan \
   -out=vpc.tfplan \
   -var="project_name=$PROJECT_NAME" \
   -var="env=$ENV"
-  #-var="region=$REGION"
+  -var="region=$REGION"
   
 
 echo "================================================"
