@@ -1,4 +1,4 @@
 locals {
-  requester_vpc_id  =  data.aws_ssm_parameter.requester_vpc_id.value
-  accepter_vpc_id   =  data.aws_ssm_parameter.accepter_vpc_id.value
+  requester_vpc_id  =  data.terraform_remote_state.vpc.outputs.vpc_id
+  accepter_vpc_id   =  data.terraform_remote_state.vpc-2.outputs.vpc_id
 }
